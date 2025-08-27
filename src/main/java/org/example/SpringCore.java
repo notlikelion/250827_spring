@@ -11,7 +11,10 @@ public class SpringCore {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
             System.out.println("----- 스프링 컨테이너 초기화 완료 -----");
             System.out.println();
-        }
+            // Spring Container
+            OrderService orderService = context.getBean(OrderService.class);
 
+            orderService.processOrder("치킨");
+        }
     }
 }
